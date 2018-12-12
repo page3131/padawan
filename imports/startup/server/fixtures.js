@@ -230,7 +230,7 @@ Meteor.startup(() => {
         }
 
         // creates totalQ questions if there are less then addQ Questions
-        const addQ = 6;
+        const addQ = 122;
         const totalQ = 10;
         if(Question.find().count() < addQ) {
             for (let i = 1; i <= totalQ; i++) {
