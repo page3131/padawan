@@ -81,13 +81,15 @@ Template.questions.events({
         console.log('click button.answer-button => ', event, instance);
 
         const target = event.target;
-        const parent = $(target).closest('div.answer-question');
+        // const parent = $(target).closest('div.answer-question');
+        const parent = $('div.answer-question');
         const values = {
             'questionId':parent.data('id'),
             'value':parent.data('value'),
             'isReversed':!!parent.data('reversed')
         };
-
+        console.log(hahahaahhahahaahaha);
+        console.log(values);
         Meteor.call('question.answer', values.questionId, values.value, values.isReversed, (error) => {
             if (error) {
                 console.log("EEEEEERRRORRRRR: ", error);
@@ -132,7 +134,8 @@ Template.question.onRendered(function() {
     let updateBGOpacity = function(elem, value) {
         let m;
         m = $(elem).css('background-color').replace(/^rgba?\(|\s+|\)$/g,'').split(',');
-        let btn = $(elem).parents('div.answer-question').find('button.answer-button');
+        let btn = $('button.answer-button');
+        // let btn = $(elem).parents('div.answer-question').find('button.answer-button');
         let reading = $(elem).parents('div.answer-question').find('div.reading');
         reading.css('visibility', 'visible');
         btn.css('visibility','visible');
