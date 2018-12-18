@@ -87,15 +87,21 @@ Template.questions.events({
             'questionId':parent.data('id'),
             'value':parent.data('value'),
             'isReversed':!!parent.data('reversed')
+            //added
         };
-        console.log(hahahaahhahahaahaha);
+        // const values = {
+        //     'questionId':data('id'),
+        //     'value':data('value'),
+        //     'isReversed':data('reversed')
+        // };
+        console.log('hahahaahhahahaahaha');
         console.log(values);
         Meteor.call('question.answer', values.questionId, values.value, values.isReversed, (error) => {
             if (error) {
                 console.log("EEEEEERRRORRRRR: ", error);
             } else {
                 parent.remove();
-                if($('div.answer-question').length < 1) {
+                if($('div.answer-question').length < 4) {
                     Session.set('refreshQuestions', Math.random());
                 }
             }

@@ -60,7 +60,11 @@
             
             <div data-id="{{question._id}}" data-reversed="{{reversed}}" class="answer-question" data-readings='{{getReadingsAsJSON question}}' style='padding: 10px;'>
                 <div class='row' style='text-align: center;'>
-                    <div class='col-md-12'><em style='visibility: hidden'>{{question.Text}}</em></div>
+                    <div class='col-md-12'>
+                        <em style='visibility: hidden'>
+                            {{question.Text}}
+                        </em>
+                    </div>
                 </div>
                 <div class='row' style='font-weight:bold;text-align: left;'>
                     <div class="col-md-10 left-option" style="background-color:rgba(78, 100, 142, 1);padding:10px;border-radius: 5px 5px 0px 5px;">
